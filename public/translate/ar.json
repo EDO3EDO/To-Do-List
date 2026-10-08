@@ -1,0 +1,44 @@
+{
+  "NAVBAR": {
+    "HOME": "الرئيسية",
+    "ABOUT": "من نحن",
+    "SERVICES": "خدماتنا",
+    "CONTACT": "اتصل بنا"
+  },
+  "SIGN_UP": {
+    "HEADER_TITLE": "ذا كيوريتور (The Curator)",
+    "HEADER_SUBTITLE": "ابدأ رحلة تركيزك الآن",
+    "LABELS": {
+      "NAME": "الاسم الكامل",
+      "EMAIL": "البريد الإلكتروني",
+      "PASSWORD": "كلمة المرور",
+      "RE_PASSWORD": "تأكيد كلمة المرور"
+    },
+    "PLACEHOLDERS": {
+      "NAME": "جوناتان آيف",
+      "EMAIL": "curator@minimalist.com"
+    },
+    "ERRORS": {
+      "NAME_REQUIRED": "اسم المستخدم مطلوب",
+      "NAME_MIN": "الحد الأدنى للاسم هو 3 أحرف",
+      "EMAIL_REQUIRED": "البريد الإلكتروني مطلوب",
+      "EMAIL_INVALID": "يرجى إدخال بريد إلكتروني صحيح (يجب أن يحتوي على @)",
+      "PASSWORD_REQUIRED": "كلمة المرور مطلوبة",
+      "PASSWORD_MIN": "الحد الأدنى لكلمة المرور هو 8 أحرف",
+      "PASSWORD_MAX": "الحد الأقصى لكلمة المرور هو 15 حرفاً",
+      "PASSWORD_PATTERN": "يجب أن تكون كلمة المرور بالصيغة التالية @&^13526AZ",
+      "CONFIRM_REQUIRED": "تأكيد كلمة المرور مطلوب",
+      "CONFIRM_PATTERN": "يجب أن تكون كلمة المرور بالصيغة التالية @&^13526AZ"
+    },
+    "BUTTONS": {
+      "SUBMIT": "إنشاء حساب",
+      "LOADING": "جاري التحميل...",
+      "OR": "أو",
+      "GOOGLE": "المتابعة باستخدام Google"
+    },
+    "FOOTER": {
+      "ALREADY_HAVE_ACCOUNT": "لديك حساب بالفعل؟ ",
+      "LOG_IN": "تسجيل الدخول"
+    }
+  }
+}

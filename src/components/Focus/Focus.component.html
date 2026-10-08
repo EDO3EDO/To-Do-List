@@ -1,0 +1,163 @@
+@if (IsLoding()) {
+<div class="d-flex justify-content-center align-items-center vh-100">
+<span class="loader"></span>
+</div>
+}@else{
+
+
+<div class="container">
+  <div class="container-fluid w-100 w-md-75 px-0 px-sm-3">
+    <div class="row m-0">
+
+      <div class="col-12 d-flex mt-5">
+        <span class="hr align-self-center"></span>
+        <p class="focusmode ms-3">focus mode</p>
+      </div>
+
+      <div class="typing-container col-12">
+        <h1 class="typing-text main-font">Redesign Brand Identity System</h1>
+      </div>
+
+      <div class="category-buttons-container col-12 px-0 py-3 flex-wrap">
+        <div>
+          <button class="category-btn category-active">
+            <i class="material-icons">category</i>
+            <span class="btn-text">{{catigory().title}}</span>
+          </button>
+        </div>
+        <div>
+          <button [disabled]="isRuning()" [ngClass]="!isRuning() ? 'category-add' : 'disapled-category'" data-bs-target="#exampleModalToggle" data-bs-toggle="modal" class="category-btn category-add">
+            <i class="material-icons">add</i>
+            <span class="btn-text">Add Category</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="col-12 px-0">
+        <div class="row m-0 gap-3 gap-md-0 justify-content-between">
+          <div class="parent-Due width-custom-col col-12 col-md-6">
+            <div class="d-flex justify-content-between">
+              <p class="Due-Date">Due Date</p>
+              <i class="material-symbols-outlined them-color">calendar_today</i>
+            </div>
+            <div>
+              <p class="Due-Month main-font mb-1">{{hello() | date:'MMMM d, y'}}</p>
+              <p class="Due-Time main-font m-0">{{hello() | date:'EEEE'}} • {{hello() | date:'h:mm a'}}</p>
+            </div>
+          </div>
+
+          <div class="focus-timer-parent width-custom-col col-12 col-md-6">
+            <div class="d-flex justify-content-between">
+              <p class="Due-Date">Reminder</p>
+              <i class="material-symbols-outlined them-color">notifications_active</i>
+            </div>
+            @if (hour() > 0 ) {
+              <div class="Hour-Befor main-font">{{dalytime()}} HOUR BEFOR</div>
+            }
+            @if (hour() == 0 && minit() > 0) {
+              <div class="Hour-Befor main-font">{{dalytime()}} MINIT BEFOR</div>
+            }
+            @if (minit() == 0 && scond() > 0) {
+              <div class="Hour-Befor main-font">{{dalytime()}} SCOND BEFOR</div>
+            }
+            @if (hour() == 0 && minit() == 0 && scond() == 0) {
+              <div class="Hour-Befor main-font">{{dalytime()}} HOUR BEFOR</div>
+            }
+            @if (isRuning()) {
+              <p class="Due-Time main-font mt-1 mb-0">Push Notification • Enabled</p>
+            } @else if (!isRuning()) {
+              <p class="Due-Time main-font mt-1 mb-0">Push Notification • Disabled</p>
+            }
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 mb-0 mt-4 hr-parent"></div>
+
+      <div class="col-12 parent-textarea mt-4 px-3 py-4">
+        <p class="Due-Time">Execution Notes</p>
+        <textarea name="" class="main-font" id="">"BC, had it right when he wrote about men on the battlefield. “Out of every one hundred men,” he wrote, “ten shouldn’t even be there, eighty are just targets, nine are the real fighters, and we are lucky to have them, for they make the battle. Ah, but the one, one is a warrior...”"</textarea>
+      </div>
+
+      <div class="col-12 d-flex justify-content-between my-4 px-0">
+        <h5 class="main-font p-color h-forT m-0 align-self-center">Sub-tasks</h5>
+        <div class="parent-forT d-flex align-items-center px-2 py-1">
+          <div class="p-forT p-0 pe-2">{{count()}}</div>
+          <p class="opacity-75 p-0 m-0 p-forT">Complete</p>
+        </div>
+      </div>
+
+      <div class="col-12 px-0">
+        @for (item of tasks(); track $index) {
+          <div (click)="viewTask(item.firebaseId)" class="Task-row mt-3">
+            <button (click)="check(item.id)" class="btn p-0 border-0 flex-shrink-0">
+              @if (!item.completed) {
+                <div class="mt-0 me-3 empty-squar"></div>
+              } @else if (item.completed) {
+                <div class="mt-0 me-3 cheack-squar d-flex align-items-center justify-content-center">
+                  <i class="material-symbols-outlined cheack-icon">check</i>
+                </div>
+              }
+            </button>
+            <input #inputTask type="text" [disabled]="item.completed" [(ngModel)]="item.title" [class.mark-completed]="item.completed" class="text-control Task-Input form-control main-font" aria-label="Text input with checkbox">
+          </div>
+        }
+      </div>
+
+      <div class="col-12 d-flex px-0 align-items-center">
+        <i class="material-symbols-outlined them-color ms-2">add_circle</i>
+        <button (click)="addNewTask()" class="my-4 btn add-btn p-1">Add new sub-task</button>
+      </div>
+
+      <div class="col-12 d-flex flex-column margin-bottom-custom flex-sm-row justify-content-center gap-3 px-0 mb-5">
+        <button (click)="SaveTask(selectTask()!)" class="btn save-btn w-100 w-sm-75 py-3">SaveChanges</button>
+        <button (click)="deleteTask()" class="btn delete-btn w-100 w-sm-25 py-3">Delete Task</button>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered px-3">
+      <div class="modal-content rounded-4 border-0">
+        <div class="modal-header border-0 pb-0">
+          <h1 class="modal-title fs-5 them-color Hour-Befor text-center w-100" id="exampleModalToggleLabel">Timer Edit</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body py-4">
+          <div class="parent-timer h-c d-flex justify-content-center gap-3 gap-sm-5 align-items-center">
+            <div class="parent-Catigory text-center">
+              <button (click)="increment('h')" class="incr-up btn bg-transparent p-0 d-block mx-auto"><i class="material-symbols-outlined">keyboard_arrow_up</i></button>
+              <input class="form-control catigory-input my-1" [(ngModel)]="hour" type="text">
+              <button (click)="decrment('h')" class="incr-down btn bg-transparent p-0 d-block mx-auto"><i class="material-symbols-outlined">keyboard_arrow_down</i></button>
+            </div>
+            <div class="parent-Catigory text-center">
+              <button (click)="increment('m')" class="incr-up btn bg-transparent p-0 d-block mx-auto"><i class="material-symbols-outlined">keyboard_arrow_up</i></button>
+              <input class="form-control catigory-input my-1" [(ngModel)]="minit" type="text">
+              <button (click)="decrment('m')" class="incr-down btn bg-transparent p-0 d-block mx-auto"><i class="material-symbols-outlined">keyboard_arrow_down</i></button>
+            </div>
+            <div class="parent-Catigory text-center">
+              <button (click)="increment('s')" class="incr-up btn bg-transparent p-0 d-block mx-auto"><i class="material-symbols-outlined">keyboard_arrow_up</i></button>
+              <input class="form-control catigory-input my-1" [(ngModel)]="scond" type="text">
+              <button (click)="decrment('s')" class="incr-down btn bg-transparent p-0 d-block mx-auto"><i class="material-symbols-outlined">keyboard_arrow_down</i></button>
+            </div>
+          </div>
+          <div class="d-flex mb-3 align-items-center mt-4">
+            <span class="material-symbols-outlined ms-2 me-2 them-color">edit_square</span>
+            <input class="form-control input-title flex-grow-1" [value]="catigory().title" (input)="UpdateCatigorytitle($event.target.value)" placeholder="Notes" type="text">
+          </div>
+        </div>
+        <div class="modal-footer border-0 pt-0 d-flex justify-content-center">
+          <button (click)="save()" class="btn btn-primary focus-btn px-4 py-2 rounded-5 d-flex align-items-center" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">
+            <i class="material-symbols-outlined me-2">adjust</i>
+            <span class="fst-normal">Focus</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+}
+

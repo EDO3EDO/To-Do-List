@@ -1,0 +1,435 @@
+:root {
+  --cart-color: rgb(255 255 255 / 1);
+  --them-color: #5D3FD3;
+  --shadow: rgba(145,158,171,.2) 0px 2px 4px -1px,rgba(145,158,171,.14) 0px 4px 5px 0px,rgba(145,158,171,.12) 0px 1px 10px 0px;
+  --font-inter: inter;
+  --width-col: 47%;
+}
+
+.hr {
+  width: 32px;
+  background-color: var(--them-color);
+  height: 2px;
+  margin-bottom: 16px;
+}
+
+.focusmode {
+  font-size: 12px;
+  font-family: inter;
+  color: var(--them-color);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.typing-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  overflow: hidden;
+  width: 100%;
+}
+
+.typing-text {
+  font-size: 1.35rem;
+  line-height: 1.4;
+  color: rgb(44, 47, 48, 1);
+  font-weight: 800;
+  border-right: 3px solid var(--them-color);
+  white-space: nowrap;
+  overflow: hidden;
+  width: 30ch;
+  animation: typing 8s steps(30) infinite, blink 0.7s step-end infinite;
+}
+
+@keyframes typing {
+  0% { width: 0; }
+  30% { width: 30ch; }
+  70% { width: 30ch; }
+  100% { width: 0; }
+}
+
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+.category-buttons-container {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.category-btn {
+  display: flex;
+  align-items: center;
+  font-family: inter !important;
+  border: none;
+  border-radius: 50px;
+  padding: 6px 14px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.category-btn i {
+  font-size: 16px;
+  margin-right: 6px;
+}
+
+.category-active {
+  background-color: var(--them-color);
+  color: white;
+}
+
+.category-active:hover {
+  box-shadow: 0 10px 25px -5px rgba(93, 63, 211, 0.3);
+}
+
+.category-add {
+  background-color: white;
+  color: #595c5d;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.category-add i {
+  color: #a0a0a0;
+}
+
+.category-add:hover {
+  background-color: #f1f1f1;
+}
+
+.disapled-category {
+  background-color: #f1f1f1;
+  color: #595c5d;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.parent-Due {
+  background-color: var(--cart-color);
+  border-radius: 18px;
+  height: auto;
+  min-height: 125px;
+  padding: 1.25rem;
+}
+
+.parent-Due:hover {
+  box-shadow: var(--shadow);
+}
+
+.Due-Date {
+  letter-spacing: 0.1em;
+  font-weight: 700;
+  color: #595c5d99;
+  font-size: 11px;
+  font-family: inter;
+  text-transform: uppercase;
+}
+
+.Due-Month {
+  color: #2c2f30;
+  font-size: 20px;
+  line-height: 1.8rem;
+}
+
+.Due-Time {
+  color: #595c5db3;
+  font-size: 13px;
+  font-family: var(--font-inter);
+}
+
+.boint {
+  font-size: large !important;
+}
+
+.h-c {
+  height: auto;
+  min-height: 140px;
+}
+
+.catigory-input {
+  width: 55px;
+  height: 45px;
+  border: 1px solid #e0e0e0;
+  background-color: #ffffff;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.parent-timer {
+  background-color: rgb(93 63 211 / 0.05);
+  border-color: rgb(93 63 211 / 0.1);
+  padding: 15px;
+  border-radius: 20px;
+}
+
+.input-title {
+  border: 2px solid var(--them-color);
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.focus-btn {
+  background-color: var(--them-color);
+  color: #f1f1f1;
+  border: none;
+}
+
+.focus-timer-parent {
+  background-color: #eff1f2;
+  border-radius: 18px;
+  height: auto;
+  min-height: 125px;
+  padding: 1.25rem;
+}
+
+.width-custom-col {
+  width: 100%;
+}
+
+.Hour-Befor {
+  font-size: 1.3rem;
+  line-height: 1.8rem;
+  font-weight: 700;
+  color: #2c2f30;
+}
+
+.hr-parent {
+  height: 4px;
+  background-color: var(--them-color);
+  border-radius: 50px;
+}
+
+.parent-textarea {
+  background-color: var(--cart-color);
+  border-radius: 18px;
+  padding: 1.25rem;
+  height: 250px;
+}
+
+textarea {
+  font-size: 15px;
+  color: #2c2f30;
+  line-height: 1.6;
+  width: 100%;
+  height: 85%;
+  border: none;
+  resize: none;
+}
+
+textarea:focus {
+  border: none;
+  outline: none;
+}
+
+.mark-completed {
+  text-decoration: line-through;
+  color: #aaa;
+}
+
+.add-btn {
+  font-weight: 600;
+  font-size: 15px;
+  font-family: inter;
+  color: var(--them-color);
+}
+
+.Task-row {
+  background-color: #ffff;
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+}
+
+.Task-Input {
+  font-size: 15px;
+  color: #2c2f30;
+  border: none;
+  outline: none;
+  box-shadow: none !important;
+  background-color: transparent !important;
+}
+
+.cheack-squar {
+  width: 22px;
+  height: 22px;
+  background-color: #5D3FD3;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.empty-squar {
+  width: 22px;
+  height: 22px;
+  border: 2px solid #2c2f30;
+  border-radius: 6px;
+}
+
+.cheack-icon {
+  font-size: 18px;
+  color: white;
+}
+
+.save-btn {
+  background: linear-gradient(90deg, var(--them-color), #8a84ff);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+.delete-btn {
+  background: #f8f9fa;
+  color: #c92a2a;
+  border: 1px solid #e0e0e0;
+  border-radius: 25px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.save-btn:active {
+  color: white;
+  opacity: 0.9;
+  transform: scale(1.02);
+}
+
+.delete-btn:active {
+  color: #c92a2a;
+  background: #fff0f0;
+  border-color: #c92a2a;
+}
+
+.h-forT {
+  font-size: 1.3rem;
+  font-weight: 800;
+}
+
+.p-forT {
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.parent-forT {
+  background-color: #e0e3e4;
+  border-radius: 70px;
+}
+
+
+.margin-bottom-custom{
+  margin-bottom: 120px !important;
+}
+
+@media (min-width: 576px) {
+  .typing-text { font-size: 2rem; }
+  .category-btn { padding: 8px 16px; font-size: 14px; }
+  .category-btn i { font-size: 18px; }
+  .parent-Due, .focus-timer-parent { padding: 1.5rem; }
+  .Due-Month { font-size: 22px; }
+}
+
+@media (min-width: 768px) {
+  .typing-text { font-size: 2.5rem; }
+  .width-custom-col { width: calc(50% - 8px); }
+  .Due-Month { font-size: 24px; }
+  .Hour-Befor { font-size: 1.5rem; }
+  .parent-textarea { height: 310px; padding: 1.5rem; }
+  textarea { font-size: 18px; }
+  .Task-row { padding: 16px; }
+  .Task-Input { font-size: 16px; }
+  .cheack-squar, .empty-squar { width: 25px; height: 25px; }
+  .cheack-icon { font-size: 24px; }
+  .h-forT { font-size: 1.5rem; }
+  .p-forT { font-size: 0.9rem; }
+}
+
+@media (min-width: 992px) {
+  .typing-text { font-size: 3rem; }
+}
+
+@media (min-width: 1200px) {
+  .typing-text { font-size: 3.75rem; }
+}
+
+@media (min-width: 1400px) {
+}
+
+
+
+
+/* ////////////////spinner/////////////////// */
+
+
+.loader {
+  --color-1: rgba(0, 0, 0, 0.3);
+  --color-2: #FFFFFF;
+  --color-3: #5D3FD3;
+  --color-4: #FFFFFF;
+  --color-5: #000000;
+  --size: 2px;
+
+  margin: auto;
+  width: calc(100 * var(--size));
+  height: calc(30 * var(--size));
+  overflow: hidden;
+  position: relative;
+  background: var(--color-1);
+  border-radius: calc(5 * var(--size));
+  box-shadow:
+    0 calc(35 * var(--size)) 0 calc(-5 * var(--size)) var(--color-2),
+    0 calc(-5 * var(--size)) 0 0 var(--color-3),
+    0 calc(-25 * var(--size)) 0 calc(-5 * var(--size)) var(--color-4),
+    calc(-25 * var(--size)) calc(-30 * var(--size)) 0 0 var(--color-3),
+    calc(-25 * var(--size)) calc(30 * var(--size)) 0 0 var(--color-3),
+    calc(25 * var(--size)) calc(-30 * var(--size)) 0 0 var(--color-3),
+    calc(25 * var(--size)) calc(30 * var(--size)) 0 0 var(--color-3),
+    calc(20 * var(--size)) calc(10 * var(--size)) 0 calc(5 * var(--size)) var(--color-3),
+    calc(20 * var(--size)) calc(-10 * var(--size)) 0 calc(5 * var(--size)) var(--color-3),
+    calc(-20 * var(--size)) calc(-10 * var(--size)) 0 calc(5 * var(--size)) var(--color-3),
+    calc(-20 * var(--size)) calc(10 * var(--size)) 0 calc(5 * var(--size)) var(--color-3);
+}
+.loader:after,
+.loader:before {
+  content: '';
+  border-radius: 100%;
+  width: calc(35 * var(--size));
+  height: calc(35 * var(--size));
+  display: block;
+  position: absolute;
+  border: calc(4 * var(--size)) dashed var(--color-4);
+  bottom: calc(-4 * var(--size));
+  transform: rotate(0deg);
+  box-sizing: border-box;
+  animation: tape 4s linear infinite;
+}
+.loader:before {
+  right: 0;
+  box-shadow:
+    0 0 0 calc(4 * var(--size)) var(--color-4),
+    0 0 0 calc(34 * var(--size)) var(--color-5);
+}
+.loader:after {
+  left: 0;
+  box-shadow:
+    0 0 0 calc(4 * var(--size)) var(--color-4),
+    0 0 0 calc(65 * var(--size)) var(--color-5);
+}
+
+@keyframes tape {
+  0% {
+    transform: rotate(0deg) scale(0.4);
+  }
+  100% {
+    transform: rotate(-360deg) scale(0.4);
+  }
+}
+

@@ -1,0 +1,140 @@
+@if (IsLoding()) {
+<div class="d-flex justify-content-center align-items-center vh-100">
+<span class="loader"></span>
+</div>
+}@else {
+  <div class="container mt-5">
+  <div class="container-fluid padding-c">
+
+    <!-- // Workspace Header // -->
+    <div class="row g-4 align-items-center">
+      <div class="col-12 col-md-7 col-lg-6">
+        <p class="them-color headP">Workspace</p>
+        <h2 class="headLine">Design your<br> <span class="them-color"> perfect flow.</span></h2>
+      </div>
+
+      <!-- // Progress Widget // -->
+      <div class="col-12 col-md-5 col-lg-4 offset-lg-2">
+        <div class="cart-color rounded-4 main-shadow p-3">
+          <div class="d-flex justify-content-between align-items-center custom-h">
+            <div>
+              <p class="p-color p-circle1 main-font m-0"> Daily Progress
+                <br>
+                <span class="main-font p-circle2 mt-3 d-inline-block">{{ progress() }}%</span>
+              </p>
+            </div>
+            <div class="circle-parent align-self-center">
+              <svg class="progress-ring" width="50" height="50">
+                <circle cx="25" cy="25" r="20" class="ring-bg"></circle>
+                <circle cx="25" cy="25" r="20" class="ring-progress" [style.--progress]="progress()"></circle>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- // Progress Line // -->
+    <div class="row">
+      <div class="col-12 p-3">
+        <div class="line-parent mt-4 mt-md-5">
+          <div id="jan" class="line-se"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mb-5 g-4">
+
+      <!-- // Tasks Section // -->
+      <div class="col-12 col-lg-8">
+        <div class="d-flex justify-content-between align-items-center px-2">
+          <h5 class="main-font p-color h-forT m-0">Today</h5>
+          <p class="opacity-75 p-forT m-0">{{count()}} Tasks</p>
+        </div>
+
+        @for (item of tasks() ; track $index) {
+          <div class="task-row mt-3 d-flex align-items-center justify-content-between">
+            <div class="d-flex align-items-center flex-grow-1">
+              <button (click)="cheack(item.id,item.firebaseId)" id="btn-cheack" class="mt-0 me-3">
+                @if (!item.completed) {
+                  <div class="mt-0 me-3 empty-circle"></div>
+                } @else if (item.completed) {
+                  <div class="mt-0 me-3 cheack-circle ">
+                    <i class="material-symbols-outlined cheack-icon">check</i>
+                  </div>
+                }
+              </button>
+              <input #inputTask (blur)="saveInFire(item.firebaseId)" type="text" [disabled]="item.completed" [(ngModel)]="item.title" id="line_trhow" [class.mark-completed]="item.completed" class="text-control Task-Input bg-body form-control main-font" aria-label="Text input with checkbox">
+            </div>
+
+            <div class="ms-2">
+              <select (change)="select($event , item)" [value]="item.priority || 'Add-Notes'" class="border-0 custom-w badge-priority" [style.backgroundColor]="item.color" id="hidden">
+                <option value="Add-Notes" class="Add-Notes border-0 text-center">Add Notes</option>
+                <option value="HIGH-PRIORITY" class="HIGH-PRIORITY border-0 text-center">HIGH PRIORITY</option>
+                <option value="STARTEGIC" class="STARTEGIC border-0 text-center">STARTEGIC</option>
+                <option value="ROUTINE" class="ROUTINE border-0 text-center">ROUTINE</option>
+                <option value="CRITICAL" class="CRITICAL border-0 text-center">CRITICAL</option>
+                <option value="UPCOMING" class="UPCOMING border-0 text-center">UPCOMING</option>
+                <option value="PENDING" class="PENDING border-0 text-center">PENDING</option>
+                <option value="IN-PROGRESS" class="IN-PROGRESS border-0 text-center">IN PROGRESS</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="mt-1 d-flex mb-3">
+            @if (item.completed) {
+              <div class="font-time align-content-center mt-1 ms-5"><i class="fa-solid fa-check-double font-time-icon align-content-center"></i> Completed {{item.completedAt}}</div>
+            } @else {
+              <div class="font-time align-content-center mt-1 ms-5"><i class="fa-clock fa-solid font-time-icon align-content-center"></i> {{item.createdAt}}</div>
+            }
+          </div>
+        }
+
+        <button (click)="addNewTask()" class="add-task-btn my-5 btn">+</button>
+      </div>
+
+      <!-- // Sidebar Section // -->
+      <div class="col-12 col-lg-4 mt-5 ">
+        <div class="d-flex justify-content-between align-items-center px-2">
+          <h5 class="main-font p-color h-forT m-0">Upcoming</h5>
+          <div (click)="viweall()" class="ps-0 them-color viwe-style">View all</div>
+        </div>
+
+        <div id="viweall" [ngClass]="viwe ? 'disviwe' : 'viwe'">
+          <div class="parent-weekly px-3 py-3 mt-4 d-flex justify-content-between align-items-center">
+            <div>
+              <p class="weekly-style main-font m-0">Weekly Sync</p>
+              <p class="font-time m-0 mt-1">tomorrow, 10:00AM</p>
+            </div>
+            <div class="position-relative d-flex align-items-center" style="min-width: 50px; height: 30px;">
+              <img src="08.png" class="Weekly-img weekly-img-position" alt="will not show" style="position: absolute; right: 15px; z-index: 1;">
+              <img src="03.png" class="Weekly-img" alt="will not show" style="position: absolute; right: 0; z-index: 2;">
+            </div>
+          </div>
+
+          <div class="parent-weekly px-3 py-3 mt-3 d-flex justify-content-between align-items-center">
+            <div>
+              <p class="weekly-style main-font m-0">Design System Launch</p>
+              <p class="font-time m-0 mt-1">Oct 24, 2023</p>
+            </div>
+            <div class="border-0 main-font milestone-color text-center">Milestone</div>
+          </div>
+        </div>
+
+        <div>
+          <div class="parent-Curator mt-4">
+            <div class="d-flex align-items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" height="28px" viewBox="0 -960 960 960" width="28px" fill="#5D3FD3"><path d="M422.83-103.5q-23.5-23.5-23.5-57.17h161.34q0 33.67-23.5 57.17T480-80q-33.67 0-57.17-23.5ZM318.67-215.33V-282h322.66v66.67H318.67ZM325.33-336q-67-42.33-106.16-108.33-39.17-66-39.17-147 0-123 88.5-211.5t211.5-88.5q123 0 211.5 88.5t88.5 211.5q0 81-38.83 147-38.84 66-106.5 108.33H325.33ZM348-402.67h264.67q47-32 73.83-81.66 26.83-49.67 26.83-107 0-96.67-68.33-165-68.33-68.34-165-68.34t-165 68.34q-68.33 68.33-68.33 165 0 57.33 26.83 107 26.83 49.66 74.5 81.66Zm132 0Z"/></svg>
+              <h5 class="Curator-style m-0 main-font">Curator's Tip</h5>
+            </div>
+            <p class="Curator-p mt-3 main-font">Try the <strong class="curator-span">2-minute rule</strong>: if a task takes less than 2 minutes, do it now instead of listing it for later.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+}

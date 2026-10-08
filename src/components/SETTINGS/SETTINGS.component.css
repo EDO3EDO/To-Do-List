@@ -1,0 +1,182 @@
+:root {
+  --cart-color: rgb(255 255 255 / 1);
+  --them-color: #5D3FD3;
+  --shadow: rgba(145,158,171,.2) 0px 2px 4px -1px,rgba(145,158,171,.14) 0px 4px 5px 0px,rgba(145,158,171,.12) 0px 1px 10px 0px;
+  --font-inter: inter;
+  --width-col: 47%;
+  --main-font: Manrope !important;
+  --black-for-me: #2c2f30;
+}
+
+.setting-img {
+  border-style: solid;
+  border-color: #e5e7eb;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+}
+
+.setting-head {
+  font-size: 26px;
+  color: var(--black-for-me);
+  letter-spacing: -0.025em;
+  font-weight: 700;
+}
+
+.setting-p {
+  font-size: 12px;
+  font-family: inter;
+  background-color: #dec8ff;
+  color: #572f97;
+  padding: 4px 12px;
+  width: 122px;
+  border-radius: 20px;
+  text-align: center;
+}
+
+.head-p {
+  font-size: 11px;
+  font-family: inter;
+  color: #abadae;
+  letter-spacing: 0.1em;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.small-list {
+  padding: 14px 18px;
+  background-color: #fff;
+  border-radius: 12px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+}
+
+.small-list:hover {
+  background-color: #f8f9fa;
+  box-shadow: none !important;
+}
+
+.small-list:hover .icon-container {
+  background-color: rgb(163, 145, 255, 1);
+}
+
+.icon-container {
+  background-color: #e9ecef;
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  margin-right: 14px;
+}
+
+.icon-container i {
+  color: #495057;
+  font-size: 20px;
+}
+
+.small-head {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #212529;
+  margin: 0;
+}
+
+.small-icon-arrow {
+  font-size: 16px !important;
+  color: #adb5bd;
+  transition: transform 0.3s ease;
+}
+
+.small-list-custom {
+  padding: 14px 18px;
+  background-color: #fff;
+  border-radius: 12px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+  margin-top: -1px;
+}
+
+.small-list-custom:hover {
+  background-color: #f8f9fa;
+  box-shadow: none !important;
+}
+
+.small-list-custom:hover .icon-container {
+  background-color: rgb(163, 145, 255, 1);
+}
+
+.delete-btn {
+  background: #f8f9fa;
+  color: #c92a2a;
+  border: 1px solid #e0e0e0;
+  padding: 16px;
+  border-radius: 10px;
+  font-size: 15px;
+  width: 100%;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.form-check.form-switch .form-check-input {
+  width: 38px;
+  height: 18px;
+  background-color: #b3b3b3;
+  border-color: transparent;
+  border-radius: 34px;
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23fff'/%3e%3c/svg%3e");
+  background-position: left center;
+  transition: background-position .3s cubic-bezier(0.4, 0, 0.2, 1), background-color .3s ease;
+}
+
+.form-check.form-switch .form-check-input:checked {
+  background-color: var(--them-color);
+  border-color: transparent;
+  background-position: right center;
+}
+
+.form-check.form-switch .form-check-input:focus {
+  border-color: transparent;
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem rgba(167, 139, 250, 0.25);
+}
+
+
+.margin-bottom-custom{
+  margin-bottom: 120px !important;
+}
+
+@media (min-width: 576px) {
+  .setting-img { width: 96px; height: 96px; }
+  .setting-head { font-size: 30px; }
+  .head-p { font-size: 12px; }
+  .small-list { padding: 16px 24px; }
+  .small-list-custom { padding: 16px 24px; }
+  .icon-container { width: 48px; height: 48px; border-radius: 12px; margin-right: 16px; }
+  .icon-container i { font-size: 24px; }
+  .small-head { font-size: 1.1rem; }
+  .small-icon-arrow { font-size: 18px !important; }
+  .delete-btn { padding: 20px; font-size: 16px; }
+  .form-check.form-switch .form-check-input { width: 40px; height: 20px; }
+}
+
+@media (min-width: 768px) {
+}
+
+@media (min-width: 992px) {
+}
+
+@media (min-width: 1200px) {
+}
+
+@media (min-width: 1400px) {
+}

@@ -1,0 +1,78 @@
+@if (SpaceService.IsLoding()) {
+<div class="d-flex justify-content-center align-items-center vh-100">
+<span class="loader"></span>
+</div>
+}@else{
+
+
+
+
+
+<div class="container px-2 px-sm-3">
+  <div class="container-fluid w-100 w-md-75 w-lg-50 p-0">
+    <div class="row m-0">
+
+      <div class="col-12 mt-5 p-0">
+        <div class="d-flex justify-content-between align-items-center">
+          <div>
+            <p class="weekly-p mb-1">Weekly Pantry</p>
+            <h3 class="weekly-head main-font mb-0">{{currntId()?.note}}</h3>
+          </div>
+          <div class="parent-count flex-shrink-0">
+            <p class="count-p1 main-font">{{taskId().length}}</p>
+            <p class="count-p2 mb-0">Items Left</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 p-0">
+        <div class="line-parent mt-4 mb-2">
+          <div id="jan" class="line-se"></div>
+        </div>
+      </div>
+
+      <div class="col-12 p-0 mt-2" style="margin-bottom: 140px;">
+        @for (item of taskId(); track $index) {
+          <div class="Task-row mt-3 shadow-sm">
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="d-flex align-items-center w-100">
+                <button (click)="SpaceService.cheack(item.id , item.firebaseId)" class="btn p-0 flex-shrink-0">
+                  @if (!item.completed) {
+                    <div class="empty-circle m-0 me-3"></div>
+                  } @else if (item.completed) {
+                    <div class="cheack-circle m-0 me-3 d-flex align-items-center justify-content-center">
+                      <i class="material-symbols-outlined cheack-icon">check</i>
+                    </div>
+                  }
+                </button>
+                <input [disabled]="item.completed" (blur)="SpaceService.saveInFire(item.firebaseId)" #inputTask type="text" [(ngModel)]="item.note" [class.mark-completed]="item.completed" class="text-control Task-Input pb-0 form-control main-font" aria-label="Text input with checkbox">
+              </div>
+            </div>
+            <div class="w-100">
+              @if (item.completed) {
+                <p class="input-time m-0">{{item.completedAt}} • Completed</p>
+              } @else {
+                <p class="input-time m-0">{{item.createdAt}} • Pending</p>
+              }
+            </div>
+          </div>
+        }
+      </div>
+
+      <div class="input-wrapper-fixed">
+        <div class="input-wrapper-inner">
+          <input type="text" (input)="SpaceService.newnote($event.target.value)" [value]="SpaceService.note().note" placeholder="Add something to your list..." class="styled-input">
+          <button [disabled]="SpaceService.note().note == '' || SpaceService.note().note == ' '" (click)="SpaceService.addNewTask(spaceId()!)" class="add-btn-gradient">
+            <i class="material-symbols-outlined">add</i>
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+}
+
+
+

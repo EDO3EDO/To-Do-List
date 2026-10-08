@@ -1,0 +1,142 @@
+/* Custom Styles & Color System mapped to Bootstrap structure */
+:root {
+    --primary: #5d3fd3;
+    --primary-container: #a391ff;
+    --secondary-container: #dec8ff;
+    --surface: #f5f6f7;
+    --on-surface: #2c2f30;
+    --on-surface-variant: #595c5d;
+    --outline-variant: #abadae;
+}
+
+body {
+    background-color: var(--surface);
+    color: var(--on-surface);
+    font-family: 'Manrope', sans-serif;
+    min-height: max(884px, 100dvh);
+}
+
+.text-them{
+  color: #5d3fd3;
+}
+
+.font-headline {
+    font-family: 'Manrope', sans-serif;
+}
+
+.font-label {
+    font-family: 'Inter', sans-serif;
+}
+
+
+.bg-blob {
+    filter: blur(60px);
+    opacity: 0.25;
+    z-index: 0;
+    position: absolute;
+    border-radius: 50%;
+}
+.blob-primary {
+    top: -10%;
+    left: -5%;
+    width: 40vw;
+    height: 40vw;
+    background-color: var(--primary-container);
+}
+.blob-secondary {
+    bottom: 10%;
+    right: -10%;
+    width: 30vw;
+    height: 30vw;
+    background-color: var(--secondary-container);
+}
+
+/* Float Animation */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0px); }
+}
+
+.float-animation {
+    animation: float 6s ease-in-out infinite;
+}
+
+/* Custom Buttons & Gradients */
+.btn-primary-gradient {
+    background: linear-gradient(135deg, #5d3fd3, #a391ff);
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.btn-primary-gradient:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 30px rgba(93, 63, 211, 0.3) !important;
+}
+
+.btn-outline-custom {
+    background: transparent;
+    border: 1px solid rgba(171, 173, 174, 0.25);
+    color: var(--primary);
+    transition: all 0.2s ease;
+}
+
+.btn-outline-custom:hover {
+    background-color: #eff1f2;
+    color: var(--primary);
+    border-color: rgba(171, 173, 174, 0.4);
+}
+
+/* Glassmorphism Navigation */
+.bg-white-glass {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-top: 1px solid rgba(220, 224, 225, 0.5);
+}
+
+/* Navigation items interaction */
+.nav-item-custom {
+    transition: all 0.2s ease;
+}
+
+.nav-item-custom:hover {
+    color: var(--primary) !important;
+}
+
+.nav-item-custom:hover .material-symbols-outlined {
+    transform: translateY(-3px);
+}
+
+.max-w-2xl {
+    max-width: 42rem;
+}
+
+/* Responsive Media Queries adjustments based on your requirements */
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+    /* يمكنك إضافة تعديلات إضافية هنا إن أردت */
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    .bg-blob {
+        filter: blur(80px);
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    /* تعديلات الشاشات الكبيرة */
+}
+
+/* X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+
+}
+
+/* XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) {
+
+}

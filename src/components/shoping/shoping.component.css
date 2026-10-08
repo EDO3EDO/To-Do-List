@@ -1,0 +1,287 @@
+:root {
+  --cart-color: rgb(255 255 255 / 1);
+  --them-color: #5D3FD3;
+  --shadow: rgba(145,158,171,.2) 0px 2px 4px -1px,rgba(145,158,171,.14) 0px 4px 5px 0px,rgba(145,158,171,.12) 0px 1px 10px 0px;
+  --font-inter: inter;
+  --width-col: 47%;
+  --main-font: Manrope !important;
+  --black-for-me: #2c2f30;
+}
+
+.weekly-p {
+  color: #757778;
+  font-family: inter;
+  font-size: 0.8rem;
+  line-height: 1.25rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.weekly-head {
+  letter-spacing: -0.05em;
+  font-weight: 700;
+  color: #2c2f30;
+  font-size: 28px;
+}
+
+.parent-count {
+  width: 80px;
+  height: 70px;
+  padding: 10px;
+  background-color: #eff1f2;
+  border-radius: 14px;
+  text-align: center;
+}
+
+.count-p1 {
+  font-size: 20px;
+  color: var(--them-color);
+  line-height: 1.5rem;
+  font-weight: 800;
+  margin-bottom: 2px;
+}
+
+.count-p2 {
+  font-size: 9px;
+  font-family: inter;
+  color: #595c5d;
+  text-transform: uppercase;
+}
+
+.line-parent {
+  height: 5px !important;
+  background-color: rgb(230, 232, 234);
+  opacity: 100%;
+  border-radius: 3px;
+}
+
+.line-se {
+  height: 5px;
+  width: 75%;
+  background-color: var(--them-color);
+  border-radius: 3px;
+}
+
+.input-wrapper-fixed {
+  position: fixed;
+  bottom: 85px;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  padding: 0 15px;
+  pointer-events: none;
+}
+
+.input-wrapper-inner {
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  pointer-events: auto;
+  filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.08));
+}
+
+.styled-input {
+  width: 100%;
+  padding: 14px 65px 14px 20px;
+  border-radius: 16px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  background: white;
+  font-size: 0.95rem;
+  color: #333;
+  outline: none;
+  box-shadow: var(--shadow);
+}
+
+.styled-input::placeholder {
+  color: #ccc;
+}
+
+.add-btn-gradient {
+  position: absolute;
+  right: 8px;
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  border: none;
+  background: linear-gradient(135deg, #8a79f2 0%, #7259ed 100%);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(114, 89, 237, 0.3);
+  transition: transform 0.2s;
+}
+
+.add-btn-gradient:hover {
+  transform: scale(1.05);
+}
+
+.empty-circle {
+  width: 26px;
+  height: 26px;
+  border: 2px solid rgb(171, 173, 174);
+  border-radius: 8px;
+}
+
+.cheack-circle {
+  width: 26px;
+  height: 26px;
+  border: 2px solid var(--them-color);
+  border-radius: 8px;
+}
+
+.Task-row {
+  background-color: #ffff;
+  padding: 12px 16px;
+  border-radius: 14px;
+}
+
+button:active, button:focus {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.Task-Input {
+  background: transparent !important;
+  font-size: 16px;
+  color: #2c2f30;
+  border: none;
+  outline: none;
+  font-weight: 600;
+  box-shadow: none !important;
+  padding: 0;
+}
+
+.Task-Input:focus {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.cheack-icon {
+  font-size: 18px;
+  color: var(--them-color);
+  font-weight: bold;
+}
+
+.input-time {
+  font-family: inter;
+  font-size: 11px;
+  color: #595c5d;
+  width: fit-content;
+  padding-left: 42px;
+  margin-top: 4px !important;
+}
+
+.mark-completed {
+  text-decoration: line-through;
+  color: #aaa;
+}
+
+@media (min-width: 576px) {
+  .weekly-head { font-size: 34px; }
+  .weekly-p { font-size: 0.875rem; }
+  .parent-count { width: 90px; height: 80px; padding: 16px; border-radius: 16px; }
+  .count-p1 { font-size: 24px; line-height: 2rem; margin-bottom: 8px; }
+  .count-p2 { font-size: 10px; }
+  .styled-input { padding: 18px 75px 18px 25px; border-radius: 20px; font-size: 1rem; }
+  .add-btn-gradient { right: 10px; width: 50px; height: 50px; border-radius: 15px; }
+  .empty-circle { width: 30px; height: 30px; border-radius: 10px; }
+  .cheack-circle { width: 30px; height: 30px; border-radius: 10px; }
+  .cheack-icon { font-size: 22px; }
+  .Task-Input { font-size: 18px; }
+  .input-time { font-size: 12px; padding-left: 46px; }
+  .input-wrapper-inner { width: 100%; }
+  .input-wrapper-fixed { bottom: 90px; }
+}
+
+@media (min-width: 768px) {
+  .input-wrapper-inner { width: 75%; }
+}
+
+@media (min-width: 992px) {
+  .input-wrapper-inner { width: 50%; }
+  .input-wrapper-fixed { bottom: 100px; }
+}
+
+@media (min-width: 1200px) {
+}
+
+@media (min-width: 1400px) {
+}
+
+
+
+/* ////////////////spinner/////////////////// */
+
+
+.loader {
+  --color-1: rgba(0, 0, 0, 0.3);
+  --color-2: #FFFFFF;
+  --color-3: #5D3FD3;
+  --color-4: #FFFFFF;
+  --color-5: #000000;
+  --size: 2px;
+
+  margin: auto;
+  width: calc(100 * var(--size));
+  height: calc(30 * var(--size));
+  overflow: hidden;
+  position: relative;
+  background: var(--color-1);
+  border-radius: calc(5 * var(--size));
+  box-shadow:
+    0 calc(35 * var(--size)) 0 calc(-5 * var(--size)) var(--color-2),
+    0 calc(-5 * var(--size)) 0 0 var(--color-3),
+    0 calc(-25 * var(--size)) 0 calc(-5 * var(--size)) var(--color-4),
+    calc(-25 * var(--size)) calc(-30 * var(--size)) 0 0 var(--color-3),
+    calc(-25 * var(--size)) calc(30 * var(--size)) 0 0 var(--color-3),
+    calc(25 * var(--size)) calc(-30 * var(--size)) 0 0 var(--color-3),
+    calc(25 * var(--size)) calc(30 * var(--size)) 0 0 var(--color-3),
+    calc(20 * var(--size)) calc(10 * var(--size)) 0 calc(5 * var(--size)) var(--color-3),
+    calc(20 * var(--size)) calc(-10 * var(--size)) 0 calc(5 * var(--size)) var(--color-3),
+    calc(-20 * var(--size)) calc(-10 * var(--size)) 0 calc(5 * var(--size)) var(--color-3),
+    calc(-20 * var(--size)) calc(10 * var(--size)) 0 calc(5 * var(--size)) var(--color-3);
+}
+.loader:after,
+.loader:before {
+  content: '';
+  border-radius: 100%;
+  width: calc(35 * var(--size));
+  height: calc(35 * var(--size));
+  display: block;
+  position: absolute;
+  border: calc(4 * var(--size)) dashed var(--color-4);
+  bottom: calc(-4 * var(--size));
+  transform: rotate(0deg);
+  box-sizing: border-box;
+  animation: tape 4s linear infinite;
+}
+.loader:before {
+  right: 0;
+  box-shadow:
+    0 0 0 calc(4 * var(--size)) var(--color-4),
+    0 0 0 calc(34 * var(--size)) var(--color-5);
+}
+.loader:after {
+  left: 0;
+  box-shadow:
+    0 0 0 calc(4 * var(--size)) var(--color-4),
+    0 0 0 calc(65 * var(--size)) var(--color-5);
+}
+
+@keyframes tape {
+  0% {
+    transform: rotate(0deg) scale(0.4);
+  }
+  100% {
+    transform: rotate(-360deg) scale(0.4);
+  }
+}
+
+

@@ -1,0 +1,389 @@
+
+<div class="parent">
+
+
+    <main class="container max-w-4xl mt-5 space-y-16">
+        <section class="text-center section-spacing">
+            <div class="mb-4">
+                <h2 class="font-display display-5 fw-extrabold text-on-surface mb-3">How can we help?</h2>
+                <p class="text-on-surface-variant max-w-lg mx-auto fs-5">Search for topics, browse categories, or contact our technical support team.</p>
+            </div>
+            <div class="position-relative max-w-2xl mx-auto search-group">
+                <div class="position-absolute top-50 start-0 translate-middle-y ms-4 text-primary d-flex align-items-center">
+                    <span class="material-symbols-outlined fs-4">search</span>
+                </div>
+                <input class="form-control custom-search-input w-full" placeholder="Search for topics..." type="text"/>
+            </div>
+        </section>
+
+        <section class="row g-4 section-spacing">
+            <div (click)="firstfun()" [ngClass]="firstCard ? 'full-width' : 'fit-width' " [class.order-down]="scondCard" class="col-12 col-md-6 col-lg-3">
+              <div class="bento-card h-100 d-flex justify-content-between">
+                  <div class="">
+                    <div class="icon-wrapper mb-4">
+                        <span class="material-symbols-outlined">person</span>
+                    </div>
+                    <h3 class="font-headline fw-bold fs-5 text-on-surface card-title">Account Management</h3>
+                    <p class="text-on-surface-variant small mt-2 card-desc">Change password and profile.</p>
+                </div>
+                <!-- ////////////////////// full-width///////////////////////// -->
+                @if (firstCard) {
+                        <div>
+          <div class="d-flex gap-2 mt-3">
+          <span class="d-inline-block  align-self-center rounded-circle list-style"></span>
+          <li class=" main-font hover-background ">Open your Profile Settings.</li>
+          </div>
+
+          <div class="d-flex gap-2 mt-3">
+          <span class="d-inline-block  align-self-center rounded-circle list-style"></span>
+          <li class=" main-font hover-background ">Click on the photo avatar to upload a new profile picture.</li>
+          </div>
+
+          <div class="d-flex gap-2 mt-3">
+          <span class="d-inline-block align-self-center rounded-circle list-style"></span>
+          <li class="main-font hover-background ">Edit your name or email fields directly.</li>
+          </div>
+
+          <div class="d-flex gap-2 mt-3">
+          <span class="d-inline-block align-self-center rounded-circle list-style"></span>
+          <li class="main-font hover-background">Click the Save Updates button.</li>
+          </div>
+                </div>
+                }
+              </div>
+            </div>
+
+
+
+
+
+            <div (click)="scondfun()" [ngClass]="scondCard ? 'full-width' : 'fit-width' " [class.order-down]="firstCard" [class.order-up]="scondCard "  class="col-12 col-md-6 col-lg-3">
+              <div class="bento-card h-100 d-flex justify-content-between">
+                  <div class="">
+                    <div class="icon-wrapper mb-4">
+                        <span class="material-symbols-outlined">task_alt</span>
+                    </div>
+                    <h3 class="font-headline fw-bold fs-5 text-on-surface card-title">Tasks &amp; Lists</h3>
+                    <p class="text-on-surface-variant small mt-2 card-desc">Organize and schedule your daily tasks.</p>
+                </div>
+                <!-- ////////////////////// full-width///////////////////////// -->
+                @if (scondCard) {
+                        <div>
+          <div class="d-flex gap-2 mt-3">
+  <span class="d-inline-block align-self-center rounded-circle list-style"></span>
+  <li class="main-font hover-background">Create a new dedicated area for your venture.</li>
+</div>
+
+<div class="d-flex gap-2 mt-3">
+  <span class="d-inline-block align-self-center rounded-circle list-style"></span>
+  <li class="main-font hover-background">Define your focus and name your space.</li>
+</div>
+
+<div class="d-flex gap-2 mt-3">
+  <span class="d-inline-block align-self-center rounded-circle list-style"></span>
+  <li class="main-font hover-background">Click on the Add Category button to structure tasks.</li>
+</div>
+
+<div class="d-flex gap-2 mt-3">
+  <span class="d-inline-block align-self-center rounded-circle list-style"></span>
+  <li class="main-font hover-background">Start curating  your new space.</li>
+</div>
+                </div>
+                }
+              </div>
+            </div>
+
+
+
+
+
+                        <div (click)="thirdfun()" [ngClass]="thirdCard ? 'full-width' : 'fit-width' " [class.order-down]="scondCard" [class.order-up]="thirdCard"  class="col-12 col-md-6 col-lg-3">
+              <div class="bento-card h-100 d-flex justify-content-between">
+                  <div class="">
+                    <div class="icon-wrapper mb-4">
+                        <span class="material-symbols-outlined">security</span>
+                    </div>
+                    <h3 class="font-headline fw-bold fs-5 text-on-surface card-title">Privacy &amp; Security</h3>
+                    <p class="text-on-surface-variant small mt-2 card-desc">How to protect and secure your data.</p>
+                </div>
+                <!-- ////////////////////// full-width///////////////////////// -->
+                @if (thirdCard) {
+                        <div>
+          <div class="d-flex gap-2 mt-3">
+  <span class="d-inline-block align-self-center rounded-circle list-style"></span>
+  <li class="main-font hover-background">Access your Privacy Control dashboard.</li>
+</div>
+
+<div class="d-flex gap-2 mt-3">
+  <span class="d-inline-block align-self-center rounded-circle list-style"></span>
+  <li class="main-font hover-background">Enable two-factor authentication for extra protection.</li>
+</div>
+
+<div class="d-flex gap-2 mt-3">
+  <span class="d-inline-block align-self-center rounded-circle list-style"></span>
+  <li class="main-font hover-background">Manage app permissions and connected devices.</li>
+</div>
+
+<div class="d-flex gap-2 mt-3">
+  <span class="d-inline-block align-self-center rounded-circle list-style"></span>
+  <li class="main-font hover-background">Review and update your security recovery options.</li>
+</div>
+                </div>
+                }
+              </div>
+            </div>
+
+
+
+
+
+
+
+                                    <div (click)="forcefun()" [ngClass]="forceCard ? 'full-width' : 'fit-width' " [class.order-down]="thirdCard" [class.order-up]="forceCard"  class="col-12 col-md-6 col-lg-3">
+              <div class="bento-card h-100 d-flex justify-content-between">
+                  <div class="">
+                    <div class="icon-wrapper mb-4">
+                        <span class="material-symbols-outlined">payments</span>
+                    </div>
+                    <h3 class="font-headline fw-bold fs-5 text-on-surface card-title">Subscriptions</h3>
+                    <p class="text-on-surface-variant small mt-2 card-desc">Invoices and payment plans.</p>
+                </div>
+                <!-- ////////////////////// full-width///////////////////////// -->
+                @if (forceCard) {
+                        <div>
+          <div class="d-flex gap-2 mt-3">
+  <span class="d-inline-block align-self-center rounded-circle list-style"></span>
+  <li class="main-font hover-background">View and manage your current billing cycle.</li>
+</div>
+
+<div class="d-flex gap-2 mt-3">
+  <span class="d-inline-block align-self-center rounded-circle list-style"></span>
+  <li class="main-font hover-background">Track your subscription tier and pricing details.</li>
+</div>
+
+<div class="d-flex gap-2 mt-3">
+  <span class="d-inline-block align-self-center rounded-circle list-style"></span>
+  <li class="main-font hover-background">Access and download past transaction invoices.</li>
+</div>
+
+<div class="d-flex gap-2 mt-3">
+  <span class="d-inline-block align-self-center rounded-circle list-style"></span>
+  <li class="main-font hover-background">Update your payment methods and plans securely.</li>
+</div>
+                </div>
+                }
+              </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="section-spacing">
+
+
+
+
+            <div class="d-flex align-items-center justify-content-between border-bottom border-2 border-surface-low pb-3 mb-4">
+                <h2 class="font-display h4 fw-bold text-on-surface m-0">Common Questions</h2>
+                <a class="text-primary fw-bold text-decoration-none hover-underline">View All</a>
+            </div>
+
+
+
+
+
+
+
+            <div class="d-flex flex-column gap-3">
+
+<div class="faq-item">
+  <div class="d-flex justify-content-between align-items-center" (click)="firstqufun()">
+    <span class="main-fontfw-bold">How do I add a new task?</span>
+
+    <span class="material-symbols-outlined text-on-surface-variant arrow-icon"
+          [class.arrow-rotate]="firstqu">
+          expand_more
+    </span>
+  </div>
+
+  <div [ngClass]="firstqu ? 'full-hight' : 'fit-hight'">
+    <div class="pt-3">
+<div class="d-flex gap-2 mt-3">
+  <span class="d-inline-block align-self-center rounded-circle list-style"></span>
+  <li class="main-font hover-background">Navigate to your active Space dashboard.</li>
+</div>
+
+<div class="d-flex gap-2 mt-3">
+  <span class="d-inline-block align-self-center rounded-circle list-style"></span>
+  <li class="main-font hover-background">Click on the Add Task input field or button.</li>
+</div>
+
+<div class="d-flex gap-2 mt-3">
+  <span class="d-inline-block align-self-center rounded-circle list-style"></span>
+  <li class="main-font hover-background">Type your task description and set a deadline.</li>
+</div>
+
+<div class="d-flex gap-2 mt-3">
+  <span class="d-inline-block align-self-center rounded-circle list-style"></span>
+  <li class="main-font hover-background">Press enter or click Save to publish the task.</li>
+</div>
+
+      </div>
+  </div>
+</div>
+
+
+
+<!-- ///////////////////////////////scond///////////////// -->
+
+
+<div class="faq-item">
+  <div class="d-flex justify-content-between align-items-center" (click)="scondqufun()">
+    <span class="main-fontfw-bold">How do I change the app language?</span>
+    <span class="material-symbols-outlined text-on-surface-variant arrow-icon"
+          [class.arrow-rotate]="scondqu">
+          expand_more
+    </span>
+  </div>
+
+  <div [ngClass]="scondqu ? 'full-hight' : 'fit-hight'">
+    <div class="pt-3">
+<div class="d-flex gap-2 mt-3">
+  <span class="d-inline-block align-self-center rounded-circle list-style"></span>
+  <li class="main-font">Open your Account or Profile Settings menu.</li>
+</div>
+
+<div class="d-flex gap-2 mt-3">
+  <span class="d-inline-block align-self-center rounded-circle list-style"></span>
+  <li class="main-font">Look for the Language or Preferences section.</li>
+</div>
+
+<div class="d-flex gap-2 mt-3">
+  <span class="d-inline-block align-self-center rounded-circle list-style"></span>
+  <li class="main-font">Select your preferred language from the dropdown list.</li>
+</div>
+
+<div class="d-flex gap-2 mt-3">
+  <span class="d-inline-block align-self-center rounded-circle list-style"></span>
+  <li class="main-font">Click Save or Apply to update the interface instantly.</li>
+</div>
+
+      </div>
+  </div>
+</div>
+
+
+
+<!-- ////////////////third//////////// -->
+
+
+
+<div class="faq-item">
+  <div class="d-flex justify-content-between align-items-center" (click)="thirdqufun()">
+    <span class="main-fontfw-bold">Can I sync data across multiple devices?</span>
+    <span class="material-symbols-outlined text-on-surface-variant arrow-icon"
+          [class.arrow-rotate]="thirdqu">
+          expand_more
+    </span>
+  </div>
+
+  <div [ngClass]="thirdqu ? 'full-hight' : 'fit-hight'">
+    <div class="pt-3">
+<div class="d-flex gap-2 mt-3">
+  <span class="d-inline-block align-self-center rounded-circle list-style"></span>
+  <li class="main-font">Sign in with the same account on all your devices.</li>
+</div>
+
+<div class="d-flex gap-2 mt-3">
+  <span class="d-inline-block align-self-center rounded-circle list-style"></span>
+  <li class="main-font">Ensure you have an active cloud backend connection.</li>
+</div>
+
+<div class="d-flex gap-2 mt-3">
+  <span class="d-inline-block align-self-center rounded-circle list-style"></span>
+  <li class="main-font">Your tasks and updates will synchronize automatically in real-time.</li>
+</div>
+
+<div class="d-flex gap-2 mt-3">
+  <span class="d-inline-block align-self-center rounded-circle list-style"></span>
+  <li class="main-font">Access your updated workspace from any phone, tablet, or PC.</li>
+</div>
+
+
+      </div>
+  </div>
+</div>
+
+
+
+
+<!-- ////////////force//////////////// -->
+
+<div class="faq-item">
+  <div class="d-flex justify-content-between align-items-center" (click)="forcequfun()">
+    <span class="main-fontfw-bold">How do I delete my account permanently?</span>
+    <span class="material-symbols-outlined text-on-surface-variant arrow-icon"
+          [class.arrow-rotate]="forcequ">
+          expand_more
+    </span>
+  </div>
+
+  <div [ngClass]="forcequ ? 'full-hight' : 'fit-hight'">
+    <div class="pt-3">
+
+<div class="d-flex gap-2 mt-3">
+  <span class="d-inline-block align-self-center rounded-circle list-style"></span>
+  <li class="main-font">Go to Privacy & Security settings in your profile.</li>
+</div>
+
+<div class="d-flex gap-2 mt-3">
+  <span class="d-inline-block align-self-center rounded-circle list-style"></span>
+  <li class="main-font">Scroll down to the Danger Zone or Account Management section.</li>
+</div>
+
+<div class="d-flex gap-2 mt-3">
+  <span class="d-inline-block align-self-center rounded-circle list-style"></span>
+  <li class="main-font">Click on Delete Account and confirm your identity/password.</li>
+</div>
+
+<div class="d-flex gap-2 mt-3">
+  <span class="d-inline-block align-self-center rounded-circle list-style"></span>
+  <li class="main-font">Note that this action is irreversible and all your spaces will be erased.</li>
+</div>
+
+      </div>
+  </div>
+</div>
+
+
+            </div>
+        </section>
+
+        <!-- Support Section -->
+        <section class="support-panel position-relative overflow-hidden text-center">
+            <div class="blur-circle circle-top"></div>
+            <div class="blur-circle circle-bottom"></div>
+            <div class="position-relative z-1 space-y-4">
+                <h2 class="font-display h3 fw-bold text-on-surface mb-3">Still need help?</h2>
+                <p class="text-on-surface-variant max-w-md mx-auto mb-4">Our team is always available to answer your questions and solve any problems you encounter.</p>
+                <div class="d-flex flex-column flex-sm-row align-items-center justify-content-center gap-3 pt-2 buttons-container">
+                    <button class="btn btn-support-primary"> <a href="mailto:edo11091109@gmail.com?subject=Contact%20from%20App&body=Hello%20Edo," class="text-decoration-none text-light"> Contact Us</a></button>
+                    <button (click)="CommingSoon()" class="btn btn-support-secondary">Visit Community Forum</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+  </div>

@@ -1,0 +1,49 @@
+
+
+    <!-- Main Content Canvas -->
+    <main class="flex-grow-1 d-flex align-items-center justify-content-center position-relative px-3 px-md-5 py-5 pb-md-5 z-1">
+        <!-- Background Decorative Elements -->
+        <div class="bg-blob blob-primary"></div>
+        <div class="bg-blob blob-secondary"></div>
+
+        <!-- 404 Content Container -->
+        <div class="position-relative z-1 max-w-2xl w-100 d-flex flex-column align-items-center text-center">
+
+            <!-- Floating Illustration / Icon Area -->
+            <div class="position-relative d-flex align-items-center justify-content-center float-animation mb-4 mb-md-5" style="width: 12rem; height: 12rem;">
+                <div class="position-absolute w-100 h-100 bg-white rounded-circle shadow-lg opacity-50 blur-sm"></div>
+                <div class="position-relative w-75 h-75 bg-white rounded-circle d-flex align-items-center justify-content-center shadow-lg border border-opacity-15  z-1">
+                    <span class="material-symbols-outlined display-4 text-them  fw-light">
+                        draft
+                    </span>
+                    <!-- Abstract geometric shapes representing a lost task -->
+                    <div class="position-absolute top-0 end-0 translate-middle-x w-25 h-25 bg-light rounded-3 d-flex align-items-center justify-content-center border border-opacity-15  shadow-sm" style="transform: rotate(12deg);">
+                        <div class="w-50 h-25 bg-secondary rounded-pill opacity-45"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Typography Header -->
+            <div class="mb-4 w-100">
+                <h1 class="font-headline fw-extrabold fs-2 fs-md-1 text-dark tracking-tight mb-3">
+                    404 - Page Not Found
+                </h1>
+                <p class="font-label fs-6 fs-md-5 text-muted fw-medium lh-base max-w-md mx-auto px-2">
+                    Oops! It looks like this page has wandered away from our curator.
+                </p>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="d-flex flex-column flex-sm-row align-items-center justify-content-center gap-3 mt-2 w-100 px-3 px-sm-0">
+                <!-- Primary CTA -->
+                <a (click)="BackToMyTasks()" class="btn btn-primary-gradient text-white font-headline fw-bold fs-6 px-4 py-3 rounded-3 shadow-sm w-100 w-sm-auto d-flex align-items-center justify-content-center gap-2 text-decoration-none">
+                    <span class="material-symbols-outlined fs-5">
+                        check_circle
+                    </span>
+                    Back to My Tasks
+                </a>
+            </div>
+
+        </div>
+    </main>
+

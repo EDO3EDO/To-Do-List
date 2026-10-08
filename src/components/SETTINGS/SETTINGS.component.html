@@ -1,0 +1,110 @@
+<div class="container">
+  <div class="container-fluid w-100 w-md-75 w-lg-50 px-0 px-sm-3">
+    <div class="row m-0 justify-content-center">
+
+      <div class="col-12 text-center mt-5 d-flex flex-column align-items-center">
+        <img class="setting-img" src="09.png" alt="">
+        <h3 class="setting-head main-font mt-3">Hello Worled!</h3>
+        <p class="setting-p mt-2">Pro Curator</p>
+      </div>
+
+      <div class="col-12 mt-4 head-p text-center text-sm-start px-2">Account</div>
+
+      <div routerLink="/edit" class="col-12 mt-3 px-2">
+        <div class="small-list shadow d-flex align-items-center justify-content-between">
+          <div class="d-flex align-items-center">
+            <div class="icon-container">
+              <i class="material-symbols-outlined">person</i>
+            </div>
+            <h2 class="small-head main-font mb-0">Edit Profile</h2>
+          </div>
+          <div class="arrow-container">
+            <i class="material-symbols-outlined small-icon-arrow">arrow_forward_ios</i>
+          </div>
+        </div>
+      </div>
+
+      <div (click)="CommingSoon()" class="col-12 px-2">
+        <div class="small-list-custom shadow d-flex align-items-center justify-content-between">
+          <div class="d-flex align-items-center">
+            <div class="icon-container">
+              <i class="material-symbols-outlined">shield_person</i>
+            </div>
+            <h2 class="small-head main-font mb-0">Security</h2>
+          </div>
+          <div class="arrow-container">
+            <i class="material-symbols-outlined small-icon-arrow">arrow_forward_ios</i>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 mt-5 head-p text-center text-sm-start px-2">Preferences</div>
+
+      <div class="col-12 mt-3 px-2">
+        <div class="small-list shadow d-flex align-items-center justify-content-between">
+          <div class="d-flex align-items-center">
+            <div class="icon-container">
+              <i class="material-symbols-outlined">notifications</i>
+            </div>
+            <h2 class="small-head main-font mb-0">notifications</h2>
+          </div>
+          <div class="form-check form-switch me-1">
+            <input class="form-check-input" [checked]="Notfication.switchNot()" (change)="Notfication.switchfun()" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+            <label class="form-check-label" for="flexSwitchCheckDefault"></label>
+          </div>
+        </div>
+      </div>
+
+      <div (click)="CommingSoon()" class="col-12 px-2">
+        <div class="small-list-custom shadow d-flex align-items-center justify-content-between">
+          <div class="d-flex align-items-center">
+            <div class="icon-container">
+              <i class="material-symbols-outlined">palette</i>
+            </div>
+            <h2 class="small-head main-font mb-0">Them</h2>
+          </div>
+          <div class="arrow-container">
+            <i class="material-symbols-outlined small-icon-arrow">arrow_forward_ios</i>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 mt-5 head-p text-center text-sm-start px-2">Support</div>
+
+      <div routerLink="/help" class="col-12 mt-3 px-2">
+        <div class="small-list shadow d-flex align-items-center justify-content-between">
+          <div class="d-flex align-items-center">
+            <div class="icon-container">
+              <i class="material-symbols-outlined">Help</i>
+            </div>
+            <h2 class="small-head main-font mb-0">Help Center</h2>
+          </div>
+          <div class="arrow-container">
+            <i class="material-symbols-outlined small-icon-arrow">arrow_forward_ios</i>
+          </div>
+        </div>
+      </div>
+
+      <div routerLink="/privet" class="col-12 px-2">
+        <div class="small-list-custom shadow d-flex align-items-center justify-content-between">
+          <div class="d-flex align-items-center">
+            <div class="icon-container">
+              <i class="material-symbols-outlined">policy</i>
+            </div>
+            <h2 class="small-head main-font mb-0">Privacy Policy</h2>
+          </div>
+          <div class="arrow-container">
+            <i class="material-symbols-outlined small-icon-arrow">arrow_forward_ios</i>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 mt-5 margin-bottom-custom px-2">
+        <button class="btn delete-btn main-font d-flex justify-content-center align-items-center">
+          <i class="material-symbols-outlined me-2">logout</i>Logout
+        </button>
+      </div>
+
+    </div>
+  </div>
+</div>

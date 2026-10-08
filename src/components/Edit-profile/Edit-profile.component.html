@@ -1,0 +1,53 @@
+@if (IsLoding()) {
+<div class="d-flex justify-content-center align-items-center vh-100">
+<span class="loader"></span>
+</div>
+}@else{
+
+
+<div class="container">
+  <div class="container-fluid w-100 w-md-75 w-lg-50 px-0 px-sm-3">
+    <div class="row m-0">
+
+      <div class="col-12 edit-head main-font text-center text-sm-start mt-4">Edit Profile</div>
+      <div class="col-12 edit-head2 mt-2 text-center text-sm-start">Manage your public identity and digital curation preferences.</div>
+
+      <div class="col-12 d-flex justify-content-center mt-4 mb-3">
+        <div class="img-parent d-flex align-items-center justify-content-center">
+          <img class="setting-img" [src]="userPhoto()" alt="">
+          <label class="camera-upload-btn">
+            <i class="material-symbols-outlined img-icon">camera_alt</i>
+            <input type="file" (change)="onFileSelected($event)" accept="image/*">
+          </label>
+        </div>
+      </div>
+
+      <div class="col-12 px-2">
+        <div class="full-label my-2">Full Name</div>
+        <input class="full-input shadow w-100" #nameInput [value]="userName()" type="text">
+      </div>
+
+      <div class="col-12 px-2">
+        <div class="full-label mt-4 mb-2">Email Address</div>
+        <div class="full-input w-100 parent-email d-flex align-items-center">
+          <i class="material-symbols-outlined email me-2 ms-1">lock</i>
+          <p class="m-0 email main-font">{{userEmail()}}</p>
+        </div>
+      </div>
+
+      <div class="col-12 px-2">
+        <div class="full-label mt-4 mb-2">Bio</div>
+        <textarea class="main-font shadow w-100" #nametext>{{userBio()}}</textarea>
+      </div>
+
+      <div class="col-12 px-2">
+        <button (click)="onNameChanged(nameInput.value); onBioChanged(nametext.value)" class="btn save-btn w-100 mt-5">Save Changes</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+}
+

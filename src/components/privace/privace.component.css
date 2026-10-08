@@ -1,0 +1,243 @@
+
+:root{
+  --cart-color:rgb(255 255 255 / 1);
+  --them-color:#5D3FD3;
+  --shadow: rgba(145,158,171,.2) 0px 2px 4px -1px,rgba(145,158,171,.14) 0px 4px 5px 0px,rgba(145,158,171,.12) 0px 1px 10px 0px;
+  --font-inter:inter;
+  --width-col: 47% ;
+  --main-font: Manrope !important;
+  --black-for-me: #2c2f30;
+}
+
+.custom-width{
+  width: 68% !important;
+}
+
+.img-head{
+  border-radius: 30px;
+  object-fit: cover;
+  height: 256px;
+}
+
+
+
+.custom-img{
+  position: relative;
+  border-radius: 30px;
+  overflow: hidden;
+}
+
+
+.overlay{
+  background-image: linear-gradient(to top, #f5f6f7 , transparent , transparent );
+  border-radius: 30px;
+  width: 100%;
+  height: 256px;
+  z-index: 5;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+
+
+/* //////intro  */
+
+.intro-p{
+  text-transform: uppercase;
+  font-size: 12px;
+  font-family: inter;
+  font-weight: 700;
+  color: var(--them-color);
+  letter-spacing: 0.2em;
+}
+
+.intro-icon{
+  font-size: 12px;
+  color: var(--them-color);
+}
+
+
+/* //////head-priv/// */
+
+.head-priv{
+  font-size: 36px;
+  font-weight: 800;
+  color: #2c2f30;
+  opacity: 0.9;
+}
+
+.priv-p{
+  color: #595c5d;
+  font-size: 20px;
+  max-width: 42rem;
+}
+
+/* ///////// cart-priv/// */
+
+.cart-priv{
+  background-color: var(--cart-color);
+  border-radius: 32px;
+  padding: 40px;
+  height: 320px;
+}
+
+
+
+.work-icon{
+  background-color: #5d3fd31a;
+  padding: 10px;
+  color: var(--them-color);
+  border-radius: 16px;
+  font-size: 36px;
+}
+
+.cart-head{
+  font-size: 24px;
+  color: #2c2f30;
+  font-weight: 700;
+}
+
+.cart-priv  li {
+  list-style: none;
+  color: #595c5d;
+  font-size: 16px;
+  opacity: 0.8;
+}
+
+.list-style{
+  background-color: #5D3FD3;
+  width: 6px;
+  height: 6px;
+}
+
+
+.cart-p{
+  color: #595c5d;
+  font-size: 16px;
+  opacity: 0.8;
+}
+
+
+
+
+/* ////////////Digital Security////// */
+
+.security-card {
+  background-color: #ffffff;
+  border-radius: 40px;
+  max-width: 850px;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.icon-box {
+  width: 64px;
+  height: 64px;
+  background-color: var(--them-color);
+  border-radius: 22px;
+  box-shadow: 0 10px 20px rgba(99, 102, 241, 0.25);
+}
+
+.security-card h3 {
+  font-size: 1.6rem;
+  letter-spacing: -0.5px;
+}
+
+.security-card p {
+  font-size: 1.05rem;
+  color: #6c757d !important;
+}
+
+
+.cust-icon{
+  border-radius: 24px;
+  font-size: 36px;
+  color: white;
+}
+
+
+
+/* ////////////////////////////legal///////////// */
+
+
+
+.legal-card {
+  background-color: #eff1f2;
+  border-radius: 40px;
+  max-width: 850px;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.legal-card h3 {
+  font-size: 1.6rem;
+  letter-spacing: -0.5px;
+}
+
+.legal-card p {
+  font-size: 1.05rem;
+  color: #6c757d !important;
+}
+
+.btn-legal {
+  background-color: #ffffff;
+  border: none;
+  color: #2c2f30;
+  font-family:inter;
+  padding: 0.75rem 1.5rem;
+  border-radius: 12px;
+  font-weight: 500;
+  font-size: 0.95rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+  transition: all 0.2s ease;
+}
+
+.btn-legal:hover {
+  background-color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+}
+
+.text-danger-custom {
+  color: #a30036 !important;
+}
+
+.black-for-me{
+  color: #2c2f30;
+}
+
+
+/* /////////////////////////////////////footer////////////////////////////////////////// */
+
+
+
+.privacy-footer {
+  font-family: system-ui, -apple-system, sans-serif;
+  background-color: #f4f5f7;
+  border-top: 1px solid #e5e7eb;
+}
+
+.footer-text {
+  font-size: 14px;
+  font-family: inter;
+  color: #595c5d;
+}
+
+.contact-link {
+  color: var(--them-color);
+  text-decoration: none;
+  font-size: 16px;
+  transition: color 0.2s ease;
+}
+
+.last-updated {
+  font-size: 12px;
+  color: #abadae !important;
+}
+
+.link-icon{
+  font-size: 16px;
+}
+
+.margin-top{
+  margin-top: 110px;
+}

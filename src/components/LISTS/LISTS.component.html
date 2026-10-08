@@ -1,0 +1,183 @@
+@if (IsLoding()) {
+<div class="d-flex justify-content-center align-items-center vh-100">
+<span class="loader"></span>
+</div>
+}@else{
+
+<div class="container">
+  <div class="container-fluid px-0 px-sm-3">
+    <div class="row g-3 m-0">
+
+      <div class="col-12 mt-5">
+        <p class="workspace-p">Workspace Overview</p>
+        <h1 class="main-font">Life Categories</h1>
+        <p class="workspace-p2 w-100 w-md-50">Organize your thoughts and tasks into curated environments. Each space is designed for focus and intent.</p>
+      </div>
+
+      <div class="col-12 col-lg-8">
+        <div class="work-parent">
+          <i class="material-symbols-outlined big-work-icon">work</i>
+          <div class="z-3 position-relative d-flex flex-column h-100 justify-content-between p-4 p-sm-5">
+            <div class="d-flex justify-content-between align-items-center">
+              <i class="material-symbols-outlined work-icon m-0">work</i>
+              <p class="work-p m-0">priority area</p>
+            </div>
+            <div class="mt-4 mt-sm-5">
+              <h2 class="head-2 main-font mb-2">Work</h2>
+              <p class="w-100 w-sm-75 work-p2 main-font m-0">Professional commitments, project milestones, and upcoming deadlines.</p>
+            </div>
+            <div class="d-flex align-items-center mt-4">
+              <img class="work-img ms-1" src="03.png" alt="">
+              <img class="work-img me-3" src="09.png" alt="">
+              <p class="work-p3 m-0">12 Open Tasks</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div (click)="personalpage()" class="col-12 col-lg-4">
+        <div class="work-parent">
+          <div class="z-3 position-relative d-flex flex-column h-100 justify-content-between p-4 p-sm-5">
+            <div>
+              <i class="material-symbols-outlined work-icon m-0">person</i>
+            </div>
+            <div class="mt-4 mt-sm-5">
+              <h2 class="head-2 main-font mb-2">personal</h2>
+              <p class="work-p2 main-font m-0">Self-care, health goals, and private projects.</p>
+            </div>
+            <div class="mt-4">
+              <div class="line-parent w-100 mb-2">
+                <div class="line-se"></div>
+              </div>
+              <p class="parsonal-p m-0">8 Tasks Remaining</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="row g-3 m-0 mt-2">
+
+      <div (click)="shopingPage()" class="col-12 col-md-6">
+        <div class="small-list">
+          <div class="d-flex justify-content-between align-items-center h-100 p-3 p-sm-4">
+            <div class="d-flex align-items-center">
+              <i class="material-symbols-outlined small-icon m-0 me-3 me-md-4">shopping_bag</i>
+              <div>
+                <h2 class="small-head main-font m-0">shoping</h2>
+                <p class="small-p main-font m-0">{{shopingId().length}} Items on list</p>
+              </div>
+            </div>
+            <div>
+              <i class="material-symbols-outlined small-icon-arrow m-0 me-2">arrow_forward_ios</i>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div (click)="restaurantPage()" class="col-12 col-md-6">
+        <div class="small-list">
+          <div class="d-flex justify-content-between align-items-center h-100 p-3 p-sm-4">
+            <div class="d-flex align-items-center">
+              <i class="material-symbols-outlined small-icon m-0 me-3 me-md-4">restaurant</i>
+              <div>
+                <h2 class="small-head main-font m-0">restaurant</h2>
+                <p class="small-p main-font m-0">{{AutoId().length}} Items on list</p>
+              </div>
+            </div>
+            <div>
+              <i class="material-symbols-outlined small-icon-arrow m-0 me-2">arrow_forward_ios</i>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      @for ( space of spaceService.Space(); track $index) {
+        <div class="col-12 col-md-6">
+          <div class="small-list">
+            <div [routerLink]="['/space' , space.id]" class="d-flex justify-content-between align-items-center h-100 p-3 p-sm-4">
+              <div class="d-flex align-items-center">
+                <i class="material-symbols-outlined small-icon m-0 me-3 me-md-4">{{space.icon}}</i>
+                <div>
+                  <h2 class="small-head main-font m-0">{{space.note}}</h2>
+                  <p class="small-p main-font m-0">{{spaceService.getCountById(space.id)}} Items on list</p>
+                </div>
+              </div>
+              <div (click)="deleteSpace(space.id , $event); $event.stopPropagation()">
+                <i class="material-symbols-outlined small-icon-arrow m-0 me-2 point">delete</i>
+              </div>
+            </div>
+          </div>
+        </div>
+      }
+
+      <div class="col-12 parent-add-list px-3 px-sm-5">
+        <button data-bs-target="#exampleModalToggle" data-bs-toggle="modal" [disabled]="spaceService.Space().length == 2" class="plus-btn"><i class="material-symbols-outlined">add</i></button>
+        <h4 class="main-font">Create New Space</h4>
+        <p class="work-p2 m-0">Need a dedicated area for a new venture?</p>
+        <p class="work-p2 pb-1">Define your focus and start curating.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered px-3">
+      <div class="modal-content rounded-4 border-0">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5 them-color Hour-Befor text-center w-100" id="exampleModalToggleLabel">Add Note</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="d-flex mb-4 justify-content-center align-items-center">
+            <span class="material-symbols-outlined me-2 them-color">edit_square</span>
+            <input [value]="spaceService.note().note" (input)="spaceService.newnote($event.target.value)" placeholder="Add Name Of Space" class="form-control input-title flex-grow-1" type="text">
+          </div>
+          <div>
+            <h4 class="head-2 text-center text-sm-start fs-5 mb-3">icon select</h4>
+            <div class="icon-grid">
+              <span (click)="spaceService.selectIcon('fitness_center')" [class.active]="spaceService.note().icon === 'fitness_center'" class="icon-card"><span class="material-symbols-outlined">fitness_center</span></span>
+              <span (click)="spaceService.selectIcon('directions_walk')" [class.active]="spaceService.note().icon === 'directions_walk'" class="icon-card"><span class="material-symbols-outlined">directions_walk</span></span>
+              <span (click)="spaceService.selectIcon('monitor_heart')" [class.active]="spaceService.note().icon === 'monitor_heart'" class="icon-card"><span class="material-symbols-outlined">monitor_heart</span></span>
+              <span (click)="spaceService.selectIcon('nutrition')" [class.active]="spaceService.note().icon === 'nutrition'" class="icon-card"><span class="material-symbols-outlined">nutrition</span></span>
+              <span (click)="spaceService.selectIcon('shopping_bag')" [class.active]="spaceService.note().icon === 'shopping_bag'" class="icon-card"><span class="material-symbols-outlined">shopping_bag</span></span>
+              <span (click)="spaceService.selectIcon('book')" [class.active]="spaceService.note().icon === 'book'" class="icon-card"><span class="material-symbols-outlined">book</span></span>
+              <span (click)="spaceService.selectIcon('edit_note')" [class.active]="spaceService.note().icon === 'edit_note'" class="icon-card"><span class="material-symbols-outlined">edit_note</span></span>
+              <span (click)="spaceService.selectIcon('checklist')" [class.active]="spaceService.note().icon === 'checklist'" class="icon-card"><span class="material-symbols-outlined">checklist</span></span>
+              <span (click)="spaceService.selectIcon('call')" [class.active]="spaceService.note().icon === 'call'" class="icon-card"><span class="material-symbols-outlined">call</span></span>
+              <span (click)="spaceService.selectIcon('mail')" [class.active]="spaceService.note().icon === 'mail'" class="icon-card"><span class="material-symbols-outlined">mail</span></span>
+              <span (click)="spaceService.selectIcon('groups')" [class.active]="spaceService.note().icon === 'groups'" class="icon-card"><span class="material-symbols-outlined">groups</span></span>
+              <span (click)="spaceService.selectIcon('chat')" [class.active]="spaceService.note().icon === 'chat'" class="icon-card"><span class="material-symbols-outlined">chat</span></span>
+              <span (click)="spaceService.selectIcon('shopping_basket')" [class.active]="spaceService.note().icon === 'shopping_basket'" class="icon-card"><span class="material-symbols-outlined">shopping_basket</span></span>
+              <span (click)="spaceService.selectIcon('home')" [class.active]="spaceService.note().icon === 'home'" class="icon-card"><span class="material-symbols-outlined">home</span></span>
+              <span (click)="spaceService.selectIcon('restaurant')" [class.active]="spaceService.note().icon === 'restaurant'" class="icon-card"><span class="material-symbols-outlined">restaurant</span></span>
+              <span (click)="spaceService.selectIcon('directions_car')" [class.active]="spaceService.note().icon === 'directions_car'" class="icon-card"><span class="material-symbols-outlined">directions_car</span></span>
+              <span (click)="spaceService.selectIcon('tv')" [class.active]="spaceService.note().icon === 'tv'" class="icon-card"><span class="material-symbols-outlined">tv</span></span>
+              <span (click)="spaceService.selectIcon('headphones')" [class.active]="spaceService.note().icon === 'headphones'" class="icon-card"><span class="material-symbols-outlined">headphones</span></span>
+              <span (click)="spaceService.selectIcon('bed')" [class.active]="spaceService.note().icon === 'bed'" class="icon-card"><span class="material-symbols-outlined">bed</span></span>
+              <span (click)="spaceService.selectIcon('flight')" [class.active]="spaceService.note().icon === 'flight'" class="icon-card"><span class="material-symbols-outlined">flight</span></span>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer border-0 pt-0 d-flex justify-content-center">
+          <button (click)="spaceService.addNewSpace()" class="btn btn-primary focus-btn d-flex align-items-center justify-content-center px-4 py-2 rounded-5" data-bs-dismiss="modal">
+            <i class="material-symbols-outlined me-2">add</i>
+            <span class="fst-normal">Add Task</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+
+}
+
+
+
+
+
+

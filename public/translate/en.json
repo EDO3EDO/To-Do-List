@@ -1,0 +1,39 @@
+{
+  "SIGN_UP": {
+    "HEADER_TITLE": "The Curator",
+    "HEADER_SUBTITLE": "Begin your journey of focus",
+    "LABELS": {
+      "NAME": "FULL NAME",
+      "EMAIL": "EMAIL ADDRESS",
+      "PASSWORD": "PASSWORD",
+      "RE_PASSWORD": "RE-PASSWORD"
+    },
+    "PLACEHOLDERS": {
+      "NAME": "Jonathan Ive",
+      "EMAIL": "curator@minimalist.com"
+    },
+    "ERRORS": {
+      "NAME_REQUIRED": "The UserName Is required",
+      "NAME_MIN": "Min Length Is 3 Characters",
+      "EMAIL_REQUIRED": "The Email Is required",
+      "EMAIL_INVALID": "Please enter a valid email (must include @)",
+      "PASSWORD_REQUIRED": "The Password Is required",
+      "PASSWORD_MIN": "Min Length Is 8 Characters",
+      "PASSWORD_MAX": "Max Length Is 15 Characters",
+      "PASSWORD_PATTERN": "The password must be @&^13526AZ",
+      "CONFIRM_REQUIRED": "The confirm password Is required",
+      "CONFIRM_PATTERN": "The password must be @&^13526AZ"
+    },
+    "BUTTONS": {
+      "SUBMIT": "Create Account",
+      "LOADING": "Loading...",
+      "OR": "or",
+      "GOOGLE": "Continue with Google"
+    },
+    "FOOTER": {
+      "ALREADY_HAVE_ACCOUNT": "Already have an account? ",
+      "LOG_IN": "Log In"
+    }
+  }
+
+}

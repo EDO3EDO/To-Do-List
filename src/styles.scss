@@ -1,1 +1,111 @@
+
+
+
+
+body {
+  color-scheme: light;
+  background-color: var(--mat-sys-surface);
+  color: var(--mat-sys-on-surface);
+  font: var(--mat-sys-body-medium);
+  margin: 0;
+}
 /* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap");
+:root
+{
+    --cart-color:rgb(255 255 255 / 1);
+    --them-color:#5D3FD3;
+    --shadow: rgba(145,158,171,.2) 0px 2px 4px -1px,rgba(145,158,171,.14) 0px 4px 5px 0px,rgba(145,158,171,.12) 0px 1px 10px 0px;
+    --font-family:'Encode Sans Expanded', sans-serif;
+    --rating-color:#ffc908;
+}
+
+.bg-body{
+  background-color: #f5f6f7 !important;
+}
+
+.main-font{
+  font-family: Manrope !important;
+}
+
+$opacity: 0.1;
+
+.main-shadow {
+  box-shadow: #{"0 0 #0000, 0 0 #0000, 0 10px 15px -3px rgb(0 0 0 / 0.1)"};
+}
+.p-color{
+  color: #2D2D2D !important;
+}
+.cart-color{
+  background-color:var(--cart-color) ;
+}
+
+.them-color{
+  color: var(--them-color);
+}
+
+
+
+body{
+    font-family: var(--font-family) !important;
+    background-color: rgb(245 , 246 , 247) !important;
+    height: 100vh;
+}
+.rating-color
+{
+    color: var(--rating-color);
+}
+.cursor-pointer
+{
+    cursor: pointer;
+}
+a , a:hover{
+    color: black;
+    text-decoration: none;
+}
+.product:hover
+{
+    box-shadow: var(--shadow);
+    border: solid 1px var(--main-color);
+}
+.product .btn
+{
+    transition: transform 1s , opacity 1s;
+    transform: translateY(100%);
+    opacity: 0;
+}
+.product:hover .btn
+{
+    opacity: 1;
+    transform: translateY(0%);
+
+}
+.font-sm
+{
+    font-size: 14px;
+}
+.text-main
+{
+    color: var(--main-color);
+}
+.bg-main
+{
+    background-color: var(--main-color) !important;
+}
+.bg-main-light
+{
+    background-color: var(--light-color) !important;
+}
+
+
+
+
+
+@for $i from 0 through 10 {
+  .mark-completed-#{$i} {
+    text-decoration: line-through;
+  }
+}
+
+html, body { height: 120% !important; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

@@ -1,0 +1,27 @@
+.imgeLog{
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  object-fit: cover;
+  vertical-align: middle;
+  padding: .25rem !important;
+
+}
+.Head-p{
+  color: var(--them-color);
+}
+
+.none{
+  display: none !important;
+}
+
+
+
+.bord-none:focus{
+  border: none !important;
+  box-shadow: none !important;
+  outline:  none !important;
+}

@@ -1,0 +1,146 @@
+@if (IsLoding()) {
+<div class="d-flex justify-content-center align-items-center vh-100">
+<span class="loader"></span>
+</div>
+}@else{
+
+<div class="container-fluid py-3">
+  <div class="container">
+    <div class="row g-4">
+
+      <!-- Top Progress Bar -->
+      <div class="col-12 p-3">
+        <div class="line-parent mt-3 mt-md-5">
+          <div id="jan" class="line-se"></div>
+        </div>
+      </div>
+
+      <!-- Left Column: Gym Session & Tasks Completed -->
+      <div class="col-12 col-md-4 mt-3">
+        <div class="work-parent">
+            <i class="material-symbols-outlined big-work-icon">work</i>
+          <div class="z-3">
+                <p class="work-p ms-4">Today's Focus</p>
+              <div class="mt-2 ms-4">
+                <h2 class="head-2 main-font">Gym session</h2>
+                <p class="work-p2 main-font">Lower body and core stability focus. Don't forget your water bottle.</p>
+              </div>
+              <div class="d-flex ms-4 mt-3">
+                <img class="work-img me-3" src="09.png" alt="">
+                <p class="work-p3">Solo activity</p>
+              </div>
+          </div>
+        </div>
+
+        <!-- ///////////////////////////////////////////////////////end card nuber one ///////////////////////////////// -->
+
+        <div class="compo-card">
+          <div class="d-flex justify-content-between">
+            <span class="material-symbols-outlined compo-icon">task_alt</span>
+            @if (TaskCompleted() > 0 && TaskCompleted() <= 9) {
+              <div class="compo main-font">0{{TaskCompleted()}}</div>
+            }@else {
+              <div class="compo main-font">{{TaskCompleted()}}</div>
+            }
+          </div>
+
+          <div class="compo-p main-font">Tasks Completed</div>
+          <div class="compo-p2 m-0">This week's momentum is high.</div>
+        </div>
+
+      </div>
+
+      <!-- Right Column: Active List & Tasks -->
+      <div class="col-12 col-md-8 mt-3">
+        <div class="d-flex justify-content-between align-items-center">
+          <h4 class="head-active main-font">Active List</h4>
+          <p class="active-p mb-0">{{RemainingTask()}} Items Remaining</p>
+        </div>
+
+
+        <!-- ////////////////////////////////////////////////////start task////////////////////// -->
+  @for (item of tasks(); track $index) {
+    <div class="Task-row mt-3">
+      <div class="d-flex justify-content-between align-items-center">
+              <div class="d-flex align-items-center flex-grow-1">
+        <button (click)="cheack(item.id , item.firebaseId)" class="btn p-0">
+    @if (!item.completed) {
+      <div class="mt-0 me-3 empty-circle"></div>
+    }@else if (item.completed) {
+      <div class="mt-0 me-3 cheack-circle d-flex align-items-center justify-content-center"><i class="material-symbols-outlined cheack-icon">check</i></div>
+    }
+      </button>
+    <input #inputTask type="text" [disabled]="item.completed" (blur)="SaveInFire(item.firebaseId)" [(ngModel)]="item.title" [class.mark-completed]="item.completed" class="text-control Task-Input pb-0 form-control main-font" aria-label="Text input with checkbox">
+      </div>
+      <div class="task-card mt-0 me-0">
+        <i class="task-icon fas {{item.icon}}"></i>
+      </div>
+      </div>
+      <div class="w-75">
+              @if (item.completed) {
+                <p class="input-time align-content-center m-0 ps-5 ms-3 ms-md-5">{{item.completedAt}} • Completed </p>
+      }@else {
+          <p class="input-time align-content-center m-0 ps-5 ms-3 ms-md-5"> {{item.createdAt}} • {{item.note}} </p>
+      }
+      </div>
+  </div>
+      }
+      </div>
+
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered px-3">
+    <div class="modal-content rounded-4 border-0">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5 them-color Hour-Befor text-center w-100" id="exampleModalToggleLabel">Add Note</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+
+        <div class="d-flex mb-3 align-items-center">
+          <span class="material-symbols-outlined ms-2 ms-md-4 me-2 me-md-3 them-color align-content-center">edit_square</span>
+          <input [value]="note().note" (input)="newnote($event.target.value)" class="form-control ms-2 input-title w-100 w-md-75" placeholder="Notes" type="text">
+        </div>
+
+        <div>
+          <h4 class="head-2">icon select</h4>
+    <div class="icon-grid">
+  <span (click)="selectIcon('fa-dumbbell')" [class.active]="note().icon === 'fa-dumbbell'" class="icon-card"><i class="fas fa-dumbbell"></i></span>
+  <span (click)="selectIcon('fa-walking')" [class.active]="note().icon === 'fa-walking'" class="icon-card"><i class="fas fa-walking"></i></span>
+  <span (click)="selectIcon('fa-heartbeat')" [class.active]="note().icon === 'fa-heartbeat'" class="icon-card"><i class="fas fa-heartbeat"></i></span>
+  <span (click)="selectIcon('fa-apple-alt')" [class.active]="note().icon === 'fa-apple-alt'" class="icon-card"><i class="fas fa-apple-alt"></i></span>
+  <span (click)="selectIcon('fa-laptop-code')" [class.active]="note().icon === 'fa-laptop-code'" class="icon-card"><i class="fas fa-laptop-code"></i></span>
+  <span (click)="selectIcon('fa-book')" [class.active]="note().icon === 'fa-book'" class="icon-card"><i class="fas fa-book"></i></span>
+  <span (click)="selectIcon('fa-pen-nib')" [class.active]="note().icon === 'fa-pen-nib'" class="icon-card"><i class="fas fa-pen-nib"></i></span>
+  <span (click)="selectIcon('fa-tasks')" [class.active]="note().icon === 'fa-tasks'" class="icon-card"><i class="fas fa-tasks"></i></span>
+  <span (click)="selectIcon('fa-phone')" [class.active]="note().icon === 'fa-phone'" class="icon-card"><i class="fas fa-phone"></i></span>
+  <span (click)="selectIcon('fa-envelope')" [class.active]="note().icon === 'fa-envelope'" class="icon-card"><i class="fas fa-envelope"></i></span>
+  <span (click)="selectIcon('fa-users')" [class.active]="note().icon === 'fa-users'" class="icon-card"><i class="fas fa-users"></i></span>
+  <span (click)="selectIcon('fa-comments')" [class.active]="note().icon === 'fa-comments'" class="icon-card"><i class="fas fa-comments"></i></span>
+  <span (click)="selectIcon('fa-shopping-basket')" [class.active]="note().icon === 'fa-shopping-basket'" class="icon-card"><i class="fas fa-shopping-basket"></i></span>
+  <span (click)="selectIcon('fa-home')" [class.active]="note().icon === 'fa-home'" class="icon-card"><i class="fas fa-home"></i></span>
+  <span (click)="selectIcon('fa-utensils')" [class.active]="note().icon === 'fa-utensils'" class="icon-card"><i class="fas fa-utensils"></i></span>
+  <span (click)="selectIcon('fa-car')" [class.active]="note().icon === 'fa-car'" class="icon-card"><i class="fas fa-car"></i></span>
+  <span (click)="selectIcon('fa-tv')" [class.active]="note().icon === 'fa-tv'" class="icon-card"><i class="fas fa-tv"></i></span>
+  <span (click)="selectIcon('fa-headphones')" [class.active]="note().icon === 'fa-headphones'" class="icon-card"><i class="fas fa-headphones"></i></span>
+  <span (click)="selectIcon('fa-bed')" [class.active]="note().icon === 'fa-bed'" class="icon-card"><i class="fas fa-bed"></i></span>
+  <span (click)="selectIcon('fa-plane')" [class.active]="note().icon === 'fa-plane'" class="icon-card"><i class="fas fa-plane"></i></span>
+</div>
+          </div>
+        </div>
+
+      <div class="modal-footer">
+        <button (click)="addNewTask()" class="btn btn-primary focus-btn d-flex mt-3 mb-0" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal"><i class="material-symbols-outlined">add</i> <i class="ms-2 fst-normal">Add Task</i></button>
+      </div>
+    </div>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+  <button data-bs-target="#exampleModalToggle" data-bs-toggle="modal" class="add-task-btn my-5 btn">+</button>
+
+</div>
+
+}
