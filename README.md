@@ -12,7 +12,7 @@
 
 ## 🎥 Project Demo
 
-![Task App Demo](./public/demo.gif)
+![Task App Demo](demo.gif)
 
 ---
 
