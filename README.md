@@ -1,59 +1,49 @@
-# App
+# ✅ Task Management & Focus Web App
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.1.6.
+> A comprehensive productivity web application built to help users manage tasks, track daily routines, organize custom lists, and stay focused using a built-in focus timer.
 
-## Development server
+---
 
-To start a local development server, run:
+## 🔗 Quick Links
+* **Live Demo:** [View Live Demo](https://to-do-list-5e865.web.app/Sign-In)
+* **Status:** Finished / Live
 
-```bash
-ng serve
-```
+---
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## 🎥 Project Demo
 
-## Code scaffolding
+![Task App Demo](./public/demo.gif)
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+---
 
-```bash
-ng generate component component-name
-```
+## 🛠️ Tech Stack
+* **Frontend:** Angular, Standalone Components, TypeScript
+* **Styling & UI:** Bootstrap 5, Font Awesome, Custom CSS, Circular Progress Animations
+* **Backend & Database:** Firebase (Authentication, Firestore Database, Hosting)
+* **Audio & Features:** Sound Effects, Focus Timer, Custom Icons & Lists
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+---
 
-```bash
-ng generate --help
-```
+## ✨ Key Features
+* **Focus Mode & Timer:** A dedicated focus page featuring a built-in timer and task tracking to keep you concentrated.
+* **Custom Lists & Icons:** Users can create personalized lists with custom icons for better categorization.
+* **Task Categorization:** Organize tasks into different types like Routines, Strategic tasks, and more.
+* **Circular Progress Tracker:** An animated circular progress indicator that calculates and visualizes your completion percentage dynamically.
+* **User Profile & Data Sync:** Secure authentication allowing users to manage their profiles, upload personal pictures, and sync all data in real-time.
+* **Sound Effects:** Audio cues and effects integrated into the focus and task completion flows.
 
-## Building
+---
 
-To build the project run:
+## 💡 Technical Challenges & Solutions
+1. **Challenge 1 (Focus Timer Bug & Double Ringing):**
+   * *What happened:* The focus timer sometimes wouldn't ring or would ring twice because of async timing issues on the frontend.
+   * *How I fixed it:* Handled the timer state logic directly through Firebase to track the exact countdown count, ensuring it only triggers the alarm once the countdown finishes reliably.
+2. **Challenge 2 (Data Persistence & Refresh Loss):**
+   * *What happened:* Tasks were disappearing whenever the page was refreshed.
+   * *How I fixed it:* Integrated Firebase Firestore to save and fetch tasks dynamically, making sure user data persists safely across sessions.
+3. **Challenge 3 (Cross-List Data Mixing):**
+   * *What happened:* When clicking on any custom list, it was incorrectly showing tasks from *all* lists combined instead of filtering specific items.
+   * *How I fixed it:* Separated the data services and logic for each list independently to ensure clean data isolation and correct routing per list.
 
-```bash
-ng build
-```
+---
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
